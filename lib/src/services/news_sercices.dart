@@ -27,7 +27,7 @@ class NewsService with ChangeNotifier {
     Category(FontAwesomeIcons.memory, 'technology'),
   ];
 
-  // maptaque vamos a llenar conla informacion de todas las categorias para no realizar la busqueda muy a menudo
+  // mapa que vamos a llenar conla informacion de todas las categorias para no realizar la busqueda muy a menudo
   Map<String, List<Article>> categoryArticles = {};
 
   // constructor

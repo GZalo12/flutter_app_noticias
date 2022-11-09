@@ -15,11 +15,18 @@ class Tab2Page extends StatelessWidget {
           body: Column(
         children: [
           const _ListaCategorias(),
+
+          // * agregando loading
+          (newsService.getArticulosCategoriaSeleccionada.isNotEmpty)
+              ? Expanded(
+                  child: ListaNoticias(
+                      noticias: newsService.getArticulosCategoriaSeleccionada),
+                )
+              : const Expanded(
+                  child: Center(
+                  child: CircularProgressIndicator(),
+                ))
           // reutilizamos nuestro widget del tab1 para utilizarlo en mostrar las noticias por las categorias como  de botones de seleccion
-          Expanded(
-            child: ListaNoticias(
-                noticias: newsService.getArticulosCategoriaSeleccionada),
-          ),
         ],
       )),
     );
